@@ -1,0 +1,1 @@
+//Configure RIMS app so that each link is an app they can download to any Andorid device instantly as an app, do the same for iPhone but only within the Chrome browser(virtualized app).
