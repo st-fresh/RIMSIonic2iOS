@@ -1,49 +1,65 @@
-//I/This function runs firstist because its got the mostist () curvy's 
+//PreALPHA/This function runs firstist because its got the mostist () curvy's 
 (() => {
 //ALPHA/ Lets add a button that fires the initialize function in the Async-MADNESS-BABY!
 //ALPHA.i/ Lets get the main function in our Immediate Invocation function with the long-name and tell it to fire if-and-only-if (run); is called
-(run) => {
+(run) => { //see INIT/
      (DoWorkInsideAnImmediateInvocatingFunctionWithES6toCreateRandomChooserForMyCareerOpportunities);
 };
-//ALPHA.ii/ Lets write the button to the view - yay PUSH BUTTONZ!!
-document.write("<INPUT ID='runButton' TYPE='button' NAME='START'/>");
-//ALPHA.iii/ Lets make sure people know I'm not stoopid!! mmhmm
-document.write("WARNING: I am not responsible for your fate/destiny/legacy based on the choices this tool randomly makes for you");
+const _B = $("body");
+//ALPHA.ii/ Lets make sure people know I'm not stoopid!! mmhmm
+_B.append("WARNING: I am not responsible for your fate/destiny/legacy based on the choices this tool randomly makes for you");
+//ALPHA.iii/ Lets write the button to the view - yay PUSH BUTTONZ!!
+_B.append("<INPUT ID='runButton' TYPE='button' VALUE='START'/>");
 //ALPHA.iv/ Lets tell this button to only do things if the user clicks it, and to call the (run); function if the user dares to do so
-document.getElementById('runButton').addEventListener('click', () => {  
+$('#runButton').addEventListener('click', () => {  
     (run);
 });
 //-->> 
 
+//INIT/ Short for Initialize, this loads all the data we need to have funs with
+(DoWorkInsideAnImmediateInvocatingFunctionWithES6toCreateRandomChooserForMyCareerOpportunities) => {
 //I.i/ Lets add the input UIs first - careful with parens cuz
-document.write("<INPUT ID='companyInput1' TYPE='text' />"); 
-document.write("<INPUT ID='companyInput2' TYPE='text' />");
-document.write("<INPUT ID='companyInput3' TYPE='text' />");
-document.write("<INPUT ID='companyInput4' TYPE='text' />");
-document.write("<INPUT ID='companyInput5' TYPE='text' />");
-document.write("<INPUT ID='companyInput6' TYPE='text' />");
-document.write("<INPUT ID='companyInput7' TYPE='text' />");
-document.write("<INPUT ID='companyInput8' TYPE='text' />");
+_B.append("<INPUT ID='companyInput1' TYPE='text' />"); 
+_B.append("<INPUT ID='companyInput2' TYPE='text' />");
+_B.append("<INPUT ID='companyInput3' TYPE='text' />");
+_B.append("<INPUT ID='companyInput4' TYPE='text' />");
+_B.append("<INPUT ID='companyInput5' TYPE='text' />");
+_B.append("<INPUT ID='companyInput6' TYPE='text' />");
+_B.append("<INPUT ID='companyInput7' TYPE='text' />");
+_B.append("<INPUT ID='companyInput8' TYPE='text' />");
+
+//I.i/ You can render all of your Companies Online-Links with Job-Titles within the page during INIT if we want
+//_B.append('FORD in Palo Alto :' + '<a href="http://bit.ly/ford_A">bit.ly/ford_A</a>' + '/ UX-Research-Lead');
+//_B.append('APPLE in San Jose :' + '<a href="http://bit.ly/apple_B">bit.ly/apple_B/</a>' + '/ UI-Developer');
+//_B.append('AMAZON in Cupertino :' + '<a href="http://bit.ly/amazon_C">bit.ly/amazon_C</a>' + '/ Mobile-Visual Designer Cuptertino');
+//_B.append('WALMART LABS in San Bruno :' + '<a href="http://bit.ly/walmartlabs_d">bit.ly/walmartlabs_d</a>' + '/  JavaScript Developer');
+//_B.append('IGT in Fremont :' + '<a href="http://bit.ly/igt_e">bit.ly/igt_e</a>' + '/ JavaScript GraphicJS Developer');
 
 //I.ii/ This button allows user to add as many additional Companies as desired
-document.write("<INPUT ID='addCompanyButt' TYPE='button' NAME='SUBMIT' />");
+_B.append("<INPUT ID='addCompanyButt' TYPE='button' VALUE='ADD COMPANY' />");
 //--> This would be a good time to write the click-event-listener for this button outside of this scope skip to III/ 
 
-(DoWorkInsideAnImmediateInvocatingFunctionWithES6toCreateRandomChooserForMyCareerOpportunities) => {
+//I.iii/ Lets add some more buttons that give User more mini-features via quick-UI-access -- PRESS Z BUTTONZ!!
+_B.append("<INPUT ID='buildPoll' TYPE='button' VALUE='CREATE POLL' />"); //This button lets user create poll
+_B.append("<INPUT ID='randomizeButton' TYPE='BUTTON' VALUE='READ MY PALM' />"); //This button runs randomizer on most current input-field values entered by user input
+
 
       let addUIs = function() {
           return {
-              input1    : document.getElementById('companyInput1'),
-              input2    : document.getElementById('companyInput2'),
-              input3    : document.getElementById('companyInput3'),
-              input4    : document.getElementById('companyInput4'),
-              input5    : document.getElementById('companyInput5'),
-              input6    : document.getElementById('companyInput6'),
-              input7    : document.getElementById('companyInput7'),
-              input8    : document.getElementById('companyInput8'),
-              addButton : function() {const _B = document.getElementById('addCompanyButt')}, //not 100% certain this is even possible.. 
-              allInputs : function() {document.querySelectorAll('INPUT');},
-              company1  : "company1-name-here" //If you want to manually run this without UI
+              input1    : $('#companyInput1'),
+              input2    : $('#companyInput2'),
+              input3    : $('#companyInput3'),
+              input4    : $('#companyInput4'),
+              input5    : $('#companyInput5'),
+              input6    : $('#companyInput6'),
+              input7    : $('#companyInput7'),
+              input8    : $('#companyInput8'),
+              addButton : function() {const _ADD_BUTTON = $('#addCompanyButt')}, //not 100% certain this is even possible.. 
+              allInputs : function() {let companies = $('INPUT');}, //if we use let here instead of var we block-scope this to the scope it is instatiated within (possiby not good because it's dynamic; may need looser scope for functionality.. ooooOOOo functional programming)
+              pollButton: function() {const _POLL_BUTTON = $('#buildPoll')},
+              ranButton : function() {const _RAN_BUTTON = $('#randomizeButton')},
+              company1  : function() {const _A = $('#companyInput1')" //If you want to manually run this without UI
+              
               //.
               //.
               //. to be cont. after sleep
@@ -61,8 +77,10 @@ document.write("<INPUT ID='addCompanyButt' TYPE='button' NAME='SUBMIT' />");
           input7    : input7,
           input8    : input8,
           addButton : addButt,
-          allInputs : addInput,
-          company1  : company1,
+          allInputs : addInputs,
+          pollButton: pollButt,
+          ranButton : ranButt,
+          company1  : company1
           //.
           //.
           //... to be cont. after sleep
@@ -71,27 +89,55 @@ document.write("<INPUT ID='addCompanyButt' TYPE='button' NAME='SUBMIT' />");
    
 
 }; //-->> fix your indents silly-face
-})(window, document, jQuery); //expose to global scope 
-var vote = [A, B, C, D];
+})(window, document, jQuery); //expose to global scope
+
+var fieldCount = 9;
+addButt(); //adds the _ADD_BUTTON to global state
+ranButt(); //adds the _RAND_BUTTON to global state
+//SIDEffI/ Build a Poll with the Companies instead and share it with friends
+//EffI.i/ First lets make a function that creates only the stuff we need to do this; It's sitting in global scope
+_POLL_BUTTON.addEventListener('click', () => {  
+        allInputs(); //grabs all input elements from DOM and stores them into companies let-var
+        //companies var should be available to this functions scope so:
+        if (companies) {
+            companies.length > 8 ? : a  ; //More than 8 inputs means add new ones to pollerizer, Less than 8 inputs means you already have them in global scope for use
+        }
+    document.write("<INPUT ID='backButton' TYPE='button' VALUE='BACK' />"); //This shows up if you runSideI is called allowing User to go back to Poll-Maker
+    //hide RAN button until BACK is clicked
+});
+
+
+
+
+
+_RAN_BUTTON.addEventListener('click', () => {  
+    
+        allInputs(); //grabs all input elements from DOM and stores them into companies let-var
+        //companies var should be available to this functions scope so:
+        if (companies) {
+            companies.length > 8 ? : a  ; //More than 8 inputs means add new ones to pollerizer, Less than 8 inputs means you already have them in global scope for use
+        }
+    });
+    document.write("<INPUT ID='backButton' TYPE='button' VALUE='BACK' />"); //This shows up if you runSideI is called allowing User to go back to Poll-Maker
+    //hide POLL button until BACK is clicked
+
+//var vote = [A, B, C, D];
 
 ///III, IMMEDIATE FUNCTION OUTRO - ---- EVERYTHING BELOW HAPPENS NEXT/ These functions use what is initialized above to global scope in I/
-document.getElementById('addCompanyButt').addEventListener('click', () => {  
-    //
-    addInput();
+_ADD_BUTTON.addEventListener('click', () => {  
+    allInputs();
+    companies[companies.length].append(("<INPUT ID='companyInput'"+fieldCount.toString+"'TYPE='text' />"));
+    fieldCount++;
     //document.write... blah blah blah.. add a new input-field - I'm tired
 });
 
 
 
-document.getElementById('addCompanyButt').addEventListener('click', () => {  
-document.querySelectorAll('INPUT');
-});
-
 //Which Object-ive Do You Have? //so punny! omuhgursh!
-(singleParam) => {
-    let a = 1;
-    return [answer]
-};
+// (singleParam) => {
+//     let a = 1;
+//     return [answer]
+// };
 
 
 //a)
