@@ -39,6 +39,43 @@
 //but can't do:
 `let[x, y] = [1, 3, 2]`
 //because there's nothing to assign one of the values to
-//Further exploration:
+//Further exploration using doWork var:
+I'm right, I'm wrong, I'm everything but sure! -- Bad Suns
+//doWork returns `return [1, 3, 2]` instead,
+//and now if,
+`let [, x, y, z] = doWork(); //z is undefined because 2 is the last value that's assigned to y`
+//Further exploration returning an object:
+`let doWork = function() {`
+`    return {`
+`        firstName: "Jonathan",`
+`        lastName: "James",`
+`        twitter: "MrDignitty"`
+`    };`
+`};`
+//At this point be sure to recognize that doWork is being assigned a function,
+//Also be clear that `doWork();` will call the function.
+//Now using,
+ `let {`
+`     firstName : firstName,`
+ `twitter : twitter} = doWork();`
+
+
+Program time! Skipping ahead! Maybe this can be better when I finish! Think that!
+
+Random Career Chooser Program in ES6:
+
+//Using an Immediate Invocating Function, we're going to make a program that:
+//Runs in the Browser Console Instantly - Sandboxed
+//Asks the User for any number of Company names 
+//Randomly returns one of the Company names post-input and button-press[enter-key]
+
+//Get your immediate invocating function setup first:
+`(() => {`
+//Lets initialize some things here that we can call later after everything in here has happened; Async FTW
+//Please refer to es6.js on Glitch when I wake up
+`})();`
+
+
+
 
 
