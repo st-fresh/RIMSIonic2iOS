@@ -1,0 +1,23 @@
+//Configure RIMS app so that each link is an app they can download to any Andorid device instantly as an app, do the same for iPhone but only within the Chrome browser(virtualized app).
+//before you `ionic serve` run `npm install ionic-native --save`
+Run your app in the browser (great for initial development):
+  ionic serve
+
+Run on a device or simulator:
+  ionic run ios[android,browser]
+
+Share your app with testers, and test on device easily with the Ionic View companion app:
+  http://view.ionic.io
+
+Create a free Ionic account to share and test apps with Ionic View?
+
+Ionic View/
+uname/ RIMSteam
+e/ mrjames@mrjames.work
+login @/ https://apps.ionic.io/apps/
+
+quick preview of your app in the browser/
+$ cd MyIonic2Project/
+$ ionic serve 
+
+//Overwrite ../www with exported ZIP to update for local browser-based previewing
