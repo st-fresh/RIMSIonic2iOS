@@ -1,6 +1,6 @@
-////This is just having fun with es6 .. comments are loose throughout
+////This is just having fun with es6 .. comments are loose throughout.. LOOSEY GOOSEY!
 ///
-//PreALPHA/ This function runs firstist because its got the mostist () curvy's 
+//PreALPHA/ This function runs firstist because its got the mostist () curvy's/ We pass window, document, and jQuery in to allow for global scoping pattern
 (() => {
     //ALPHA.i/ Lets get the main function in our Immediate Invocation function with the long-name and tell it to fire if-and-only-if (run); is called by user-button-press
     (run) => { //see INIT/
@@ -37,16 +37,16 @@
     //_B.append('WALMART LABS in San Bruno :' + '<a href="http://bit.ly/walmartlabs_d">bit.ly/walmartlabs_d</a>' + '/  JavaScript Developer');
     //_B.append('IGT in Fremont :' + '<a href="http://bit.ly/igt_e">bit.ly/igt_e</a>' + '/ JavaScript GraphicJS Developer');
 
-    //I.iii/ This button allows user to add as many additional Companies as desired
+    //INIT.iii/ This button allows user to add as many additional Companies as desired
     _B.append("<INPUT ID='addCompanyButt' TYPE='button' VALUE='ADD COMPANY' />");
     //--> This would be a good time to write the click-event-listener for this button outside of this scope skip to III/ 
 
-    //I.iv/ Lets add some more buttons that give User more mini-features via quick-UI-access -- PRESS Z BUTTONZ!!
+    //INIT.iv/ Lets add some more buttons that allow User to execute Poll and Randomize via UI -- PRESS Z BUTTONZ!!
     _B.append("<INPUT ID='buildPoll' TYPE='button' VALUE='CREATE POLL' />"); //This button lets user create poll
     _B.append("<INPUT ID='randomizeButton' TYPE='BUTTON' VALUE='READ MY PALM' />"); //This button runs randomizer on most current input-field values entered by user input
 
-
-        let addUIs = function() {
+    //INIT.v/ Grab all the UI with jQuerynessness/ Declars some const's too because they will never change
+        let addUI = function() {
             return {
                 input1    : $('#companyInput1'),
                 input2    : $('#companyInput2'),
@@ -56,19 +56,28 @@
                 input6    : $('#companyInput6'),
                 input7    : $('#companyInput7'),
                 input8    : $('#companyInput8'),
-                addButton : function() {const _ADD_BUTTON = $('#addCompanyButt')}, //not 100% certain this is even possible.. 
-                allInputs : function() {let companies = $('INPUT');}, //if we use let here instead of var we block-scope this to the scope it is instatiated within (possiby not good because it's dynamic; may need looser scope for functionality.. ooooOOOo functional programming)
-                pollButton: function() {const _POLL_BUTTON = $('#buildPoll')},
-                ranButton : function() {const _RAN_BUTTON = $('#randomizeButton')},
-                company1  : function() {const _A = $('#companyInput1')" //If you want to manually run this without UI
-                
+                addButton : function(){
+                                const _ADD_BUTTON = $('#addCompanyButt');
+                            }, //not 100% certain this is even possible.. 
+                allInputs : function(){
+                                let companies = $('INPUT');
+                            }, //if we use let here instead of var we block-scope this to the scope it is instatiated within (possiby not good because it's dynamic; may need looser scope for functionality.. ooooOOOo functional programming)
+                pollButton: function(){
+                                const _POLL_BUTTON = $('#buildPoll');
+                            },
+                ranButton : function(){
+                                const _RAN_BUTTON = $('#randomizeButton');
+                            },
+                //company1  : "name", //If you want to make a Poll and/or Run this program witout clicking any UI then uncomment accordingly
+                //company2  : "name", 
+                //company3  : "name" //Add more if you want below where //.'s are - remember to match in destructor below
                 //.
                 //.
-                //. to be cont. after sleep
+                //.
             };
         };
 
-        //Lets create all of our variables automagically with ES6 // maybe use var here later?? idk
+        //INIT.vi/ Lets create all of our variables automagically with ES6 object destructuring - YAY!
         let {
             input1    : input1,
             input2    : input2,
@@ -82,27 +91,29 @@
             allInputs : addInputs,
             pollButton: pollButt,
             ranButton : ranButt,
-            company1  : company1
+            //company1  : company1 //create these vars if and only if you are making a Poll 
+            //company2  : company2
+            //company3  : company3
             //.
             //.
-            //... to be cont. after sleep
-
-        } = addUIs();
-    
-
+            //.
+        } = addUI(); //this calls addUIs and then automagically makes vars and adds them to global scope
     };
 })(window, document, jQuery); //expose to global scope so that all vars created are accessible outside immediate invocation function
 
+//GLO.i/ Short for Global/ Global scoped logic/ Start by declaring fieldCount counter with var not let because needs to be avail inside other functions within global scope/ This will keep track of input-fields added by user with button-press   
 var fieldCount = 9;
-addButt(); //adds the _ADD_BUTTON to global state
-ranButt(); //adds the _RAND_BUTTON to global state
-//SIDEffI/ Build a Poll with the Companies instead and share it with friends
-//EffI.i/ First lets make a function that creates only the stuff we need to do this; It's sitting in global scope
+//GLO.ii/ create const's in global scope/ see INIT.v/
+addButt(); //adds the _ADD_BUTTON to global scope
+ranButt(); //adds the _RAND_BUTTON to global scope
+pollButt(); //adds the _POLL_BUTTON to global scope
+
+//GLO.ii/ Add listener to Poll-Button/ Use functions available from immediate invocation
 _POLL_BUTTON.addEventListener('click', () => {  
         allInputs(); //grabs all input elements from DOM and stores them into companies let-var
-        //companies var should be available to this functions scope so:
+        //companies let-var should be available to this functions scope so:
         if (companies) {
-            companies.length > 8 ? : a  ; //More than 8 inputs means add new ones to pollerizer, Less than 8 inputs means you already have them in global scope for use
+            companies.length > 8 ? a : a  ; //More than 8 inputs means add new ones to pollerizer, Less than 8 inputs means you already have them in global scope for use
         }
     document.write("<INPUT ID='backButton' TYPE='button' VALUE='BACK' />"); //This shows up if you runSideI is called allowing User to go back to Poll-Maker
     //hide RAN button until BACK is clicked
